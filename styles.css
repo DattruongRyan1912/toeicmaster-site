@@ -41,8 +41,6 @@ body {
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  /* Glows and shadows may spill past the edges; never let them widen the page. */
-  overflow-x: clip;
 }
 
 img,
@@ -733,6 +731,11 @@ section {
 
 /* Tablet */
 @media (max-width: 999px) {
+  /* The frame is full width here, so the glow only spills above and below it. */
+  .hero-frame::before {
+    inset: -32px 0;
+  }
+
   .hero,
   .feature {
     grid-template-columns: minmax(0, 1fr);
