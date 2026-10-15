@@ -39,7 +39,7 @@ test('every "try it" button opens the app, and the source links are right', asyn
 test('every recording and poster loads', async ({ page, request }) => {
   await page.goto('/');
   const videos = page.locator('video');
-  await expect(videos).toHaveCount(6);
+  await expect(videos).toHaveCount(7);
   for (const video of await videos.all()) {
     expect(await video.evaluate((element: HTMLVideoElement) => element.muted)).toBe(true);
     expect(await video.getAttribute('playsinline')).not.toBeNull();
